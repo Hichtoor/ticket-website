@@ -31,6 +31,40 @@
     </div>
   </header>
   <main id="top">
+    
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="container hero__grid">
+        <div>
+          <p class="hero__eyebrow">رویدادهای نیم‌سال تحصیلی پیش‌رو</p>
+          <h1 id="heroTitle">بلیت <em>رویدادهای</em> دانشگاه را همین‌جا بگیرید</h1>
+          <p class="hero__lead">از همایش‌های علمی تا شب‌های موسیقی و مسابقات ورزشی؛ بلیت را آنلاین رزرو کنید و بدون صف، با یک کد وارد سالن شوید.</p>
+          <div class="hero__actions">
+            <a class="btn" href="#events">مشاهده رویدادها</a>
+            <a class="btn btn--ghost" href="#how">نحوه خرید</a>
+          </div>
+        </div>
+        <div class="hero__panel">
+          <svg class="hero__pattern" aria-hidden="true" focusable="false">
+            <defs>
+              <pattern id="khatam" width="56" height="56" patternUnits="userSpaceOnUse">
+                <rect x="14" y="14" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                <rect x="14" y="14" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" transform="rotate(45 28 28)"/>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#khatam)"/>
+          </svg>
+          <p class="hero__label">نزدیک‌ترین رویداد</p>
+          <div id="featuredTicket"></div>
+          <div class="countdown" role="timer" aria-label="زمان باقی‌مانده تا رویداد">
+            <div><b data-cd="d">00</b><span>روز</span></div>
+            <div><b data-cd="h">00</b><span>ساعت</span></div>
+            <div><b data-cd="m">00</b><span>دقیقه</span></div>
+            <div><b data-cd="s">00</b><span>ثانیه</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section section--tint" id="events" aria-labelledby="eventsTitle"></section>
     <section class="bold" id="how" aria-labelledby="howTitle"></section>
     <section class="section" id="faq" aria-labelledby="faqTitle"></section>
