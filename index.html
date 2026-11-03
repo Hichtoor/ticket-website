@@ -65,9 +65,51 @@
       </div>
     </section>
 
-    <section class="section section--tint" id="events" aria-labelledby="eventsTitle"></section>
-    <section class="bold" id="how" aria-labelledby="howTitle"></section>
-    <section class="section" id="faq" aria-labelledby="faqTitle"></section>
+    <section class="section section--tint" id="events" aria-labelledby="eventsTitle">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <h2 id="eventsTitle">رویدادهای در حال فروش</h2>
+            <p>رویداد موردنظر را پیدا کنید و بلیت را به سبد اضافه کنید.</p>
+          </div>
+        </div>
+        <div class="toolbar">
+          <div class="chips" id="chips" role="group" aria-label="دسته‌بندی رویدادها"></div>
+          <label class="sr-only" for="search">جستجوی رویداد</label>
+          <input class="search" id="search" type="search" placeholder="جستجوی رویداد، مکان یا دسته…" autocomplete="off">
+        </div>
+        <div class="grid" id="eventGrid"></div>
+        <div class="empty" id="emptyState" hidden>
+          <p>رویدادی با این مشخصات پیدا نشد.<br>عبارت دیگری را جستجو کنید یا دسته «همه رویدادها» را انتخاب کنید.</p>
+        </div>
+      </div>
+    </section>
+    <section class="bold" id="how" aria-labelledby="howTitle">
+      <div class="container">
+        <h2 id="howTitle">خرید بلیت در سه قدم</h2>
+        <ol class="steps">
+          <li><b>رویداد را انتخاب کنید</b><p>از میان همایش‌ها، کنسرت‌ها و کارگاه‌ها، رویداد موردنظرتان را پیدا کنید.</p></li>
+          <li><b>بلیت را به سبد بیفزایید</b><p>تعداد بلیت را مشخص کنید؛ در هر سفارش حداکثر ۶ بلیت می‌توانید بگیرید.</p></li>
+          <li><b>اطلاعات را ثبت کنید</b><p>نام و شماره موبایل را وارد کنید و کد پیگیری بلیتتان را دریافت کنید.</p></li>
+        </ol>
+        <div class="stats">
+          <div><b>+۱۲</b><span>رویداد در هر نیم‌سال</span></div>
+          <div><b>+۳,۰۰۰</b><span>صندلی در سالن‌های دانشگاه</span></div>
+          <div><b>۲۴ ساعته</b><span>ثبت‌نام آنلاین</span></div>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="faq" aria-labelledby="faqTitle">
+      <div class="container">
+        <div class="section__head"><h2 id="faqTitle">پرسش‌های متداول</h2></div>
+        <div class="faq">
+          <details><summary>بلیت را چگونه تحویل می‌گیرم؟</summary><p>پس از ثبت سفارش، کد پیگیری نمایش داده می‌شود. هنگام ورود به سالن، این کد را همراه کارت شناسایی ارائه دهید.</p></details>
+          <details><summary>آیا دانشجویان تخفیف دارند؟</summary><p>برای برخی رویدادها تخفیف ویژه دانشجویان اعمال می‌شود. جزئیات در توضیحات هر رویداد اعلام خواهد شد.</p></details>
+          <details><summary>امکان لغو یا استرداد بلیت وجود دارد؟</summary><p>تا ۴۸ ساعت پیش از شروع رویداد می‌توانید با واحد پشتیبانی تماس بگیرید و درخواست لغو ثبت کنید.</p></details>
+          <details><summary>اگر ظرفیت رویداد تکمیل شود چه می‌شود؟</summary><p>رویدادهای تکمیل‌شده با برچسب «ناموجود» نمایش داده می‌شوند. در صورت آزاد شدن صندلی، وضعیت به‌روز می‌شود.</p></details>
+        </div>
+      </div>
+    </section>
   </main>
   <footer class="site-footer" id="contact"></footer>
 
