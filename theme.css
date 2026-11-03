@@ -1,3 +1,11 @@
+@font-face {
+  font-family: B-Nazanin;
+  src: url(fonts/BNazanin.ttf);
+}
+@font-face {
+  font-family: ARIAL;
+  src: url(fonts/arial.ttf);
+}
 :root {
   --color-primary: #5b2a86;        /* 9.6:1 on white */
   --color-primary-dark: #3a1560;
@@ -30,6 +38,6 @@
   --space-1: .25rem; --space-2: .5rem; --space-3: .75rem; --space-4: 1rem;
   --space-5: 1.5rem; --space-6: 2rem; --space-7: 3rem; --space-8: 5rem;
 
-  --font-body: "Vazirmatn", Tahoma, "Segoe UI", sans-serif;
-  --font-display: "Vazirmatn", Tahoma, "Segoe UI", sans-serif;
+  --font-body: "ARIAL";
+  --font-display: "ARIAL";
 }
