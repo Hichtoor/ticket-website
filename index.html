@@ -127,6 +127,48 @@
       </div>
     </div>
   </footer>
+  <!--cart draw-->
+  <div class="overlay" id="overlay"></div>
+  <aside class="drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
+    <div class="drawer__head">
+      <h2 id="drawerTitle">سبد بلیت</h2>
+      <button class="drawer__close" id="drawerClose" aria-label="بستن سبد">×</button>
+    </div>
+    <div class="drawer__body">
+      <div class="empty" id="cartEmpty"><p>سبد بلیت شما خالی است.<br>از فهرست رویدادها بلیت اضافه کنید.</p></div>
 
+      <div id="cartFilled" hidden>
+        <div id="cartLines"></div>
+        <div class="total"><span>مبلغ قابل پرداخت</span><span id="cartTotal"></span></div>
+        <form class="form" id="checkoutForm" novalidate>
+          <div class="field">
+            <label for="f-name">نام و نام خانوادگی</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" aria-describedby="err-name">
+            <p class="error" id="err-name" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="f-phone">شماره موبایل</label>
+            <input id="f-phone" name="phone" type="tel" inputmode="numeric" maxlength="11" placeholder="09123456789" dir="ltr" autocomplete="tel" aria-describedby="err-phone">
+            <p class="error" id="err-phone" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="f-email">ایمیل (اختیاری)</label>
+            <input id="f-email" name="email" type="email" dir="ltr" autocomplete="email" aria-describedby="err-email">
+            <p class="error" id="err-email" role="alert"></p>
+          </div>
+          <button class="btn btn--block" type="submit">ثبت سفارش و پرداخت</button>
+        </form>
+      </div>
 
+      <div class="success" id="orderSuccess" hidden>
+        <h3>سفارش شما ثبت شد</h3>
+        <p>کد پیگیری بلیت:</p>
+        <code class="ltr" id="orderCode"></code>
+        <p>این کد را هنگام ورود به سالن ارائه دهید.</p>
+        <button class="btn" id="successClose" type="button">بستن</button>
+      </div>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </body>
