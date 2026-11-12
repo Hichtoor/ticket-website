@@ -46,3 +46,26 @@
     }
   });
 })();
+const section1=document.getElementById("section1");
+const section2=document.getElementById("section2");
+const linker1=document.getElementById("linker1");
+const linker2=document.getElementById("linker2");
+function transition(){
+  linker1.addEventListener("click",function(){
+    section1.style.zIndex=1;
+    section1.style.opacity=0;
+    section2.style.zIndex=2;
+    section2.style.opacity=1;
+  });
+};
+function retransition(){
+  linker2.addEventListener("click",function(){
+    section1.style.zIndex=2;
+    section1.style.opacity=1;
+    section2.style.zIndex=1;
+    section2.style.opacity=0;
+
+  })
+}
+transition();
+retransition();
