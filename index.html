@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>بلیت رویدادها | دانشگاه تربت حیدریه</title>
+  <meta name="description" content="خرید آنلاین بلیت همایش‌ها، کنسرت‌ها، کارگاه‌ها و رویدادهای دانشگاه تربت حیدریه.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vazirmatn@33.0.3/Vazirmatn-font-face.css">
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header" id="siteHeader">
+    <div class="container site-header__row">
+      <a class="brand" href="#top" aria-label="دانشگاه تربت حیدریه، بلیت رویدادها">
+        <img src="logo.png" alt="dont loading..." width="46" height="41">
+        <span><b>دانشگاه تربت حیدریه</b><small>سامانه بلیت رویدادها</small></span>
+      </a>
+      <nav class="nav" aria-label="منوی اصلی">
+          <a href="#events">رویدادها</a>
+          <a href="#how">نحوه خرید</a>
+          <a href="#faq">پرسش‌های متداول</a>
+          <a href="#contact">تماس</a>
+      </nav>
+      <div class="myselector">
+        <svg viewBox="0 0 30 30">
+          <line x1="3" y1="7" x2="27" y2="7"></line>
+          <line x1="3" y1="15" x2="27" y2="15"></line>
+          <line x1="3" y1="23" x2="27" y2="23"></line>
+        </svg>
+        <select id="myselect_header_option" >
+          <option value="" selected disabled></option>
+          <option value="events">رویدادها</option>
+          <option value="how">نحوه خرید</option>
+          <option value="faq">پرسش‌های متداول</option>
+          <option value="contact">تماس</option>
+        </select>
+      </div>
+      <button class="cart-btn" id="cartBtn" aria-expanded="false" aria-controls="cartDrawer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9a2 2 0 0 0 0 6v3a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-3a2 2 0 0 1 0-6V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1z"/><path d="M14 5v14" stroke-dasharray="2 3"/></svg>
+        سبد بلیت
+        <span class="cart-btn__count" id="cartCount">0</span>
+      </button>
+      <a class="btn" href="login.html"><b>ثبت نام</b></a>
+    </div>
+  </header>
+  <main id="top">
+    
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="container hero__grid">
+        <div>
+          <p class="hero__eyebrow">رویدادهای نیم‌سال تحصیلی پیش‌رو</p>
+          <h1 id="heroTitle">بلیت <em>رویدادهای</em> دانشگاه را همین‌جا بگیرید</h1>
+          <p class="hero__lead">از همایش‌های علمی تا شب‌های موسیقی و مسابقات ورزشی؛ بلیت را آنلاین رزرو کنید و بدون صف، با یک کد وارد سالن شوید.</p>
+          <div class="hero__actions">
+            <a class="btn" href="#events">مشاهده رویدادها</a>
+            <a class="btn btn--ghost" href="#how">نحوه خرید</a>
+          </div>
+        </div>
+        <div class="hero__panel">
+          <svg class="hero__pattern" aria-hidden="true" focusable="false">
+            <defs>
+              <pattern id="khatam" width="56" height="56" patternUnits="userSpaceOnUse">
+                <rect x="14" y="14" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                <rect x="14" y="14" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" transform="rotate(45 28 28)"/>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#khatam)"/>
+          </svg>
+          <p class="hero__label">نزدیک‌ترین رویداد</p>
+          <div id="featuredTicket"></div>
+          <div class="countdown" role="timer" aria-label="زمان باقی‌مانده تا رویداد">
+            <div><b data-cd="d">00</b><span>روز</span></div>
+            <div><b data-cd="h">00</b><span>ساعت</span></div>
+            <div><b data-cd="m">00</b><span>دقیقه</span></div>
+            <div><b data-cd="s">00</b><span>ثانیه</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="events" aria-labelledby="eventsTitle">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <h2 id="eventsTitle">رویدادهای در حال فروش</h2>
+            <p>رویداد موردنظر را پیدا کنید و بلیت را به سبد اضافه کنید.</p>
+          </div>
+        </div>
+        <div class="toolbar">
+          <div class="chips" id="chips" role="group" aria-label="دسته‌بندی رویدادها"></div>
+          <label class="sr-only" for="search">جستجوی رویداد</label>
+          <input class="search" id="search" type="search" placeholder="جستجوی رویداد، مکان یا دسته…" autocomplete="off">
+        </div>
+        <div class="grid" id="eventGrid"></div>
+        <div class="empty" id="emptyState" hidden>
+          <p>رویدادی با این مشخصات پیدا نشد.<br>عبارت دیگری را جستجو کنید یا دسته «همه رویدادها» را انتخاب کنید.</p>
+        </div>
+      </div>
+    </section>
+    <section class="bold" id="how" aria-labelledby="howTitle">
+      <div class="container">
+        <h2 id="howTitle">خرید بلیت در سه قدم</h2>
+        <ol class="steps">
+          <li><b>رویداد را انتخاب کنید</b><p>از میان همایش‌ها، کنسرت‌ها و کارگاه‌ها، رویداد موردنظرتان را پیدا کنید.</p></li>
+          <li><b>بلیت را به سبد بیفزایید</b><p>تعداد بلیت را مشخص کنید؛ در هر سفارش حداکثر ۶ بلیت می‌توانید بگیرید.</p></li>
+          <li><b>اطلاعات را ثبت کنید</b><p>نام و شماره موبایل را وارد کنید و کد پیگیری بلیتتان را دریافت کنید.</p></li>
+        </ol>
+        <div class="stats">
+          <div><b>+۱۲</b><span>رویداد در هر نیم‌سال</span></div>
+          <div><b>+۳,۰۰۰</b><span>صندلی در سالن‌های دانشگاه</span></div>
+          <div><b>۲۴ ساعته</b><span>ثبت‌نام آنلاین</span></div>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="faq" aria-labelledby="faqTitle">
+      <div class="container">
+        <div class="section__head"><h2 id="faqTitle">پرسش‌های متداول</h2></div>
+        <div class="faq">
+          <details><summary>بلیت را چگونه تحویل می‌گیرم؟</summary><p>پس از ثبت سفارش، کد پیگیری نمایش داده می‌شود. هنگام ورود به سالن، این کد را همراه کارت شناسایی ارائه دهید.</p></details>
+          <details><summary>آیا دانشجویان تخفیف دارند؟</summary><p>برای برخی رویدادها تخفیف ویژه دانشجویان اعمال می‌شود. جزئیات در توضیحات هر رویداد اعلام خواهد شد.</p></details>
+          <details><summary>امکان لغو یا استرداد بلیت وجود دارد؟</summary><p>تا ۴۸ ساعت پیش از شروع رویداد می‌توانید با واحد پشتیبانی تماس بگیرید و درخواست لغو ثبت کنید.</p></details>
+          <details><summary>اگر ظرفیت رویداد تکمیل شود چه می‌شود؟</summary><p>رویدادهای تکمیل‌شده با برچسب «ناموجود» نمایش داده می‌شوند. در صورت آزاد شدن صندلی، وضعیت به‌روز می‌شود.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer" id="contact">
+    <div class="container site-footer__grid">
+      <div>
+        <b>دانشگاه تربت حیدریه</b>
+        <p>تربت حیدریه، استان خراسان رضوی<br>واحد فرهنگی و اجتماعی دانشگاه</p>
+      </div>
+      <div>
+        <b>پشتیبانی بلیت</b>
+        <p>تلفن: <bdi class="ltr">051-0000-0000</bdi><br>ایمیل: <bdi class="ltr">events@example.ac.ir</bdi></p>
+      </div>
+      <div>
+        <b>پیوندها</b>
+        <p><a href="#events">رویدادها</a> · <a href="#faq">پرسش‌های متداول</a></p>
+      </div>
+    </div>
+  </footer>
+  <!--cart draw-->
+  <div class="overlay" id="overlay"></div>
+  <aside class="drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
+    <div class="drawer__head">
+      <h2 id="drawerTitle">سبد بلیت</h2>
+      <button class="drawer__close" id="drawerClose" aria-label="بستن سبد">×</button>
+    </div>
+    <div class="drawer__body">
+      <div class="empty" id="cartEmpty"><p>سبد بلیت شما خالی است.<br>از فهرست رویدادها بلیت اضافه کنید.</p></div>
+
+      <div id="cartFilled" hidden>
+        <div id="cartLines"></div>
+        <div class="total"><span>مبلغ قابل پرداخت</span><span id="cartTotal"></span></div>
+        <form class="form" id="checkoutForm" novalidate>
+          <div class="field">
+            <label for="f-name">نام و نام خانوادگی</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" aria-describedby="err-name">
+            <p class="error" id="err-name" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="f-phone">شماره موبایل</label>
+            <input id="f-phone" name="phone" type="tel" inputmode="numeric" maxlength="11" placeholder="09123456789" dir="ltr" autocomplete="tel" aria-describedby="err-phone">
+            <p class="error" id="err-phone" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="f-email">ایمیل (اختیاری)</label>
+            <input id="f-email" name="email" type="email" dir="ltr" autocomplete="email" aria-describedby="err-email">
+            <p class="error" id="err-email" role="alert"></p>
+          </div>
+          <button class="btn btn--block" type="submit">ثبت سفارش و پرداخت</button>
+        </form>
+      </div>
+
+      <div class="success" id="orderSuccess" hidden>
+        <h3>سفارش شما ثبت شد</h3>
+        <p>کد پیگیری بلیت:</p>
+        <code class="ltr" id="orderCode"></code>
+        <p>این کد را هنگام ورود به سالن ارائه دهید.</p>
+        <button class="btn" id="successClose" type="button">بستن</button>
+      </div>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
